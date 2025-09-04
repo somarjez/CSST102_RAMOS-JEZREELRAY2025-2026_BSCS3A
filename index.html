@@ -876,6 +876,14 @@
                 font-size: 1rem;
             }
         }
+
+        /* Ripple animation for buttons */
+        @keyframes ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -938,7 +946,7 @@
             <div class="about-text">
                 <h3>Student: <span class="highlight">Jezreel R. Ramos</span></h3>
                 <p>
-                    Welcome to my academic portfolio for <strong>CSST102: Basic Machine Learning/strong>. 
+                    Welcome to my academic portfolio for <strong>CSST102: Basic Machine Learning</strong>. 
                     This course focuses on developing sophisticated basic machine learning
                     capabilities essential for professional and academic success.
                 </p>
@@ -1033,146 +1041,6 @@
                 </div>
             </div>
 
-<!--             <!-- Assignment 2 
-            <div class="assignment-card">
-                <div class="assignment-header">
-                    <div class="assignment-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="assignment-status status-completed">Completed</div>
-                </div>
-                <h3 class="assignment-title">Data Visualization Project</h3>
-                <p class="assignment-description">
-                    Creating compelling visual representations of statistical data using advanced charting 
-                    techniques and presenting findings to support a logical argument.
-                </p>
-                <div class="assignment-meta">
-                    <span class="assignment-date">
-                        <i class="far fa-calendar"></i> Week 3-4
-                    </span>
-                    <span style="color: var(--success);">
-                        <i class="fas fa-check-circle"></i> Grade: A
-                    </span>
-                </div>
-                <div class="assignment-actions">
-                    <a href="#" class="action-btn btn-view">
-                        <i class="fas fa-file-pdf"></i> View Report
-                    </a>
-                </div>
-            </div>
-
-            <!-- Assignment 3 
-            <div class="assignment-card">
-                <div class="assignment-header">
-                    <div class="assignment-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <div class="assignment-status status-in-progress">In Progress</div>
-                </div>
-                <h3 class="assignment-title">Argumentative Analysis</h3>
-                <p class="assignment-description">
-                    Comprehensive analysis of logical fallacies and argument structures in contemporary debates, 
-                    with focus on identifying strengths and weaknesses in reasoning patterns.
-                </p>
-                <div class="assignment-meta">
-                    <span class="assignment-date">
-                        <i class="far fa-calendar"></i> Week 5-6
-                    </span>
-                    <span style="color: var(--warning);">
-                        <i class="fas fa-clock"></i> Due: Next Week
-                    </span>
-                </div>
-                <div class="assignment-actions">
-                    <a href="#" class="action-btn btn-view">
-                        <i class="fas fa-edit"></i> Work in Progress
-                    </a>
-                </div>
-            </div>
-
-            <!-- Assignment 4 
-            <div class="assignment-card">
-                <div class="assignment-header">
-                    <div class="assignment-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="assignment-status status-upcoming">Upcoming</div>
-                </div>
-                <h3 class="assignment-title">Group Debate Project</h3>
-                <p class="assignment-description">
-                    Collaborative debate on contemporary ethical issues in technology, requiring research, 
-                    logical argument construction, and effective team presentation skills.
-                </p>
-                <div class="assignment-meta">
-                    <span class="assignment-date">
-                        <i class="far fa-calendar"></i> Week 7-8
-                    </span>
-                    <span style="color: var(--gray-light);">
-                        <i class="fas fa-hourglass-start"></i> Scheduled
-                    </span>
-                </div>
-                <div class="assignment-actions">
-                    <a href="#" class="action-btn btn-view">
-                        <i class="fas fa-info-circle"></i> View Guidelines
-                    </a>
-                </div>
-            </div>
-
-            <!-- Assignment 5 
-            <div class="assignment-card">
-                <div class="assignment-header">
-                    <div class="assignment-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <div class="assignment-status status-upcoming">Upcoming</div>
-                </div>
-                <h3 class="assignment-title">Innovation Pitch</h3>
-                <p class="assignment-description">
-                    A professional-style pitch presentation proposing an innovative solution to a real-world 
-                    problem, incorporating persuasive techniques and compelling visual design.
-                </p>
-                <div class="assignment-meta">
-                    <span class="assignment-date">
-                        <i class="far fa-calendar"></i> Week 9-10
-                    </span>
-                    <span style="color: var(--gray-light);">
-                        <i class="fas fa-hourglass-start"></i> Scheduled
-                    </span>
-                </div>
-                <div class="assignment-actions">
-                    <a href="#" class="action-btn btn-view">
-                        <i class="fas fa-info-circle"></i> View Requirements
-                    </a>
-                </div>
-            </div>
-
-            <!-- Assignment 6 
-            <div class="assignment-card">
-                <div class="assignment-header">
-                    <div class="assignment-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="assignment-status status-upcoming">Upcoming</div>
-                </div>
-                <h3 class="assignment-title">Final Portfolio Presentation</h3>
-                <p class="assignment-description">
-                    Comprehensive presentation showcasing learning progress, key insights, and personal growth 
-                    throughout the course with reflective analysis and future applications.
-                </p>
-                <div class="assignment-meta">
-                    <span class="assignment-date">
-                        <i class="far fa-calendar"></i> Week 11-12
-                    </span>
-                    <span style="color: var(--gray-light);">
-                        <i class="fas fa-trophy"></i> Final Project
-                    </span>
-                </div>
-                <div class="assignment-actions">
-                    <a href="#" class="action-btn btn-view">
-                        <i class="fas fa-star"></i> Final Project
-                    </a>
-                </div>
-            </div>
- -->
         </div>
     </section>
 
@@ -1377,62 +1245,71 @@
             observer.observe(el);
         });
 
-        // Assignment card interactions
-        document.querySelectorAll('.assignment-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Action button functionality
+        // Action button functionality - FIXED to allow navigation to GitHub
         document.querySelectorAll('.action-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
-                e.preventDefault();
                 const assignmentTitle = this.closest('.assignment-card').querySelector('.assignment-title').textContent;
+                const href = this.getAttribute('href');
                 
-                // Add ripple effect
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                ripple.style.cssText = `
-                    position: absolute;
-                    background: rgba(255, 255, 255, 0.3);
-                    border-radius: 50%;
-                    pointer-events: none;
-                    transform: scale(0);
-                    animation: ripple 0.6s ease-out;
-                    width: ${size}px;
-                    height: ${size}px;
-                    left: ${e.clientX - rect.left - size / 2}px;
-                    top: ${e.clientY - rect.top - size / 2}px;
-                `;
-                this.style.position = 'relative';
-                this.appendChild(ripple);
-                
-                setTimeout(() => ripple.remove(), 600);
-                
-                // Show modal or navigate (placeholder functionality)
-                setTimeout(() => {
-                    alert(`Opening: ${assignmentTitle}\n\nThis would normally open the assignment details or submission page.`);
-                }, 200);
+                // Check if this is a real link (not just a placeholder)
+                if (href && href !== '#' && !href.includes('javascript:')) {
+                    // Don't prevent default for real links - let them work normally
+                    // Just add the ripple effect for visual feedback
+                    
+                    // Add ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    ripple.style.cssText = `
+                        position: absolute;
+                        background: rgba(255, 255, 255, 0.3);
+                        border-radius: 50%;
+                        pointer-events: none;
+                        transform: scale(0);
+                        animation: ripple 0.6s ease-out;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${e.clientX - rect.left - size / 2}px;
+                        top: ${e.clientY - rect.top - size / 2}px;
+                    `;
+                    this.style.position = 'relative';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => ripple.remove(), 600);
+                    
+                    // Browser will handle the navigation automatically
+                } else {
+                    // Only prevent default and show alert for placeholder links
+                    e.preventDefault();
+                    
+                    // Add ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    ripple.style.cssText = `
+                        position: absolute;
+                        background: rgba(255, 255, 255, 0.3);
+                        border-radius: 50%;
+                        pointer-events: none;
+                        transform: scale(0);
+                        animation: ripple 0.6s ease-out;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${e.clientX - rect.left - size / 2}px;
+                        top: ${e.clientY - rect.top - size / 2}px;
+                    `;
+                    this.style.position = 'relative';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => ripple.remove(), 600);
+                    
+                    // Show modal for placeholder functionality
+                    setTimeout(() => {
+                        alert(`Opening: ${assignmentTitle}\n\nThis would normally open the assignment details or submission page.`);
+                    }, 200);
+                }
             });
         });
-
-        // Add ripple animation CSS
-        const rippleStyle = document.createElement('style');
-        rippleStyle.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(2);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(rippleStyle);
 
         // Progress tracking for assignments
         function updateProgress() {
